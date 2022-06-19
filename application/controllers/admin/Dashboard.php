@@ -6,6 +6,9 @@ class Dashboard extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+        if(empty($this->session->userdata('status'))){
+            redirect('admin/login');
+        }
         $this->load->library('form_validation');
         $this->load->model('Base_Model','Base');
     }

@@ -54,7 +54,7 @@
                                 <th>Applicant's Name</th>
                                 <!-- <th>Username</th> -->
                                 <th>CV</th>
-                                <th>Detail Pelamar</th>
+                                <th>Certificate</th>
                                 <th>Status</th>
                                 <!-- <th>No. telp</th> -->
                                 <!-- <th>Role</th> -->
@@ -64,8 +64,14 @@
                         <tbody>
                             <?php
                             $no = 1;
+                            
                             if ($applicant) :
+
                                 foreach ($applicant as $key => $data) :
+                                      
+                                    $sertifs = explode(';', $data->sertifikat);
+                                    
+                                    
                                     ?>
                                     <tr>
                                         <td><?= $no++; ?></td>
@@ -74,8 +80,20 @@
                                         </td> -->
                                         <?php echo "<script>console.log('" . json_encode($data) . "');</script>"; ?>
                                         <td><?= $data->nama; ?></td>
-                                        <td><a href="<?= base_url('assets/upload/cv/'.$data->resume) ?>" target="_blank"><?= $data->resume ?></a></td>
-                                        <td><a href="<?= base_url('assets/upload/sertifikat/'.$data->sertifikat) ?>" target="_blank"><?= $data->sertifikat ?></a></td>
+                                        <td><a href="<?= base_url('assets/upload/cv/'.$data->resume) ?>" class="btn btn-sm btn-primary mt-2" target="_blank">Dokumen CV</a></td>
+                                        <td>
+                                            <!-- <ol> -->
+                                        <?php
+                                        $no = 1;
+                                        foreach ($sertifs as $key2) { ?>
+                                        <!-- <li> -->
+                                            <a href="<?= base_url('assets/upload/sertifikat/'.$key2) ?>" class="btn btn-sm btn-primary mt-2" target="_blank">Dokumen <?= $no++?></a>
+                                            <br>
+                                            <!-- </li> -->
+                                    <?php } ?>
+                                    <!-- </ol> -->
+                                        </td>
+                                            
                                         <td>
                                             <?php /*ucwords($data->status_daftar); */
                                                 if ($data->status_daftar == '1') {
@@ -105,18 +123,18 @@
                                                 </button>
                                                 <?php
                                                     echo '<div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
-                                                        <a class="dropdown-item" href="' .base_url('company/applicant_list/applicant_seleksi/') . $data->id_pelamar. '">Tahap 1 - Seleksi Berkas</a>
-                                                        <a class="dropdown-item" href="' .base_url('company/applicant_list/applicant_tes/') . $data->id_pelamar. '">Tahap 2 - Tes</a>
-                                                        <a class="dropdown-item" href="' .base_url('company/applicant_list/applicant_interview/') . $data->id_pelamar. '">Tahap 3 - Interview</a>
-                                                        <a class="dropdown-item" href="' .base_url('company/applicant_list/applicant_tidak_lolos/') . $data->id_pelamar. '">Tidak Lolos</a>
+                                                        <a class="dropdown-item" href="' .base_url('company/Applicant_List/applicant_seleksi/') . $data->id_pelamar. '">Tahap 1 - Seleksi Berkas</a>
+                                                        <a class="dropdown-item" href="' .base_url('company/Applicant_List/applicant_tes/') . $data->id_pelamar. '">Tahap 2 - Tes</a>
+                                                        <a class="dropdown-item" href="' .base_url('company/Applicant_List/applicant_interview/') . $data->id_pelamar. '">Tahap 3 - Interview</a>
+                                                        <a class="dropdown-item" href="' .base_url('company/Applicant_List/applicant_tidak_lolos/') . $data->id_pelamar. '">Tidak Lolos</a>
                                                     </div>';
                                                 ?>
                                                 
                                             </div>
-                                            <!-- <a href="base_url('company/applicant_list/applicant_lolos/') . $data->id " class="btn btn-circle btn-sm btn-success">
+                                            <!-- <a href="base_url('company/Applicant_List/applicant_lolos/') . $data->id " class="btn btn-circle btn-sm btn-success">
                                                 <i class="fa fa-fw fa-check"></i>
                                             </a>
-                                            <a href="base_url('company/applicant_list/applicant_tidak_lolos/') . $data->id " class="btn btn-circle btn-sm btn-danger">
+                                            <a href="base_url('company/Applicant_List/applicant_tidak_lolos/') . $data->id " class="btn btn-circle btn-sm btn-danger">
                                                 <i class="fa fa-fw fa-times"></i>
                                             </a> -->
                                             <!-- <a href="<?= base_url('admin/company/edit_company/') . $data->id ?>" class="btn btn-circle btn-sm btn-warning">

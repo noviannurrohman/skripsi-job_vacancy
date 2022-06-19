@@ -93,6 +93,8 @@
                                         <option value="">Anywhere</option>
                                         <option value="Malang">Malang</option>
                                         <option value="Purwakarta">Purwakarta</option>
+                                        <option value="Surabaya">Surabaya</option>
+                                        <option value="Jakarta">Jakarta</option>
                                     </select>
                                 </div>
                                 <!--  Select job items End-->
@@ -134,7 +136,7 @@
                                         echo '<a href="http://localhost/lowker/student/profile" class="genric-btn primary btn_lengkapi">Lengkapi Profil Anda</a>';
                                     } 
                                 ?>
-                                <div id="find_job">
+                                <div id="Find_Job">
 
                                 </div>
                                 <?php
@@ -146,10 +148,10 @@
                                             <!-- <div class="single-job-items mb-30">
                                                 <div class="job-items">
                                                     <div class="company-img">
-                                                        <a href="<?= base_url('student/find_job/detail_job/'.$data->id); ?>"><img src="<?= base_url('assets/upload/'.$data->foto); ?>" alt="" width="96"></a>
+                                                        <a href="<?= base_url('student/Find_Job/detail_job/'.$data->id); ?>"><img src="<?= base_url('assets/upload/'.$data->foto); ?>" alt="" width="96"></a>
                                                     </div>
                                                     <div class="job-tittle job-tittle2">
-                                                        <a href="<?= base_url('student/find_job/detail_job/'.$data->id); ?>">
+                                                        <a href="<?= base_url('student/Find_Job/detail_job/'.$data->id); ?>">
                                                             <h4><?= $data->nama_pekerjaan ?></h4>
                                                         </a>
                                                         <ul>
@@ -160,7 +162,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="items-link items-link2 f-right">
-                                                    <a href="<?= base_url('student/find_job/detail_job/'.$data->id); ?>"><?= $data->jenis_pekerjaan ?></a>
+                                                    <a href="<?= base_url('student/Find_Job/detail_job/'.$data->id); ?>"><?= $data->jenis_pekerjaan ?></a>
                                                     <span><?= $data->posted_date ?></span>
                                                 </div>
                                             </div> -->
@@ -461,7 +463,7 @@
                 console.log(id_skill + jenis_pekerjaan + lokasi);
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost/lowker/student/find_job/filter/",
+                    url: "http://localhost/lowker/student/Find_Job/filter/",
                     data: {
                         'id_skill' : id_skill,
                         'jenis_pekerjaan' : jenis_pekerjaan,
@@ -470,7 +472,7 @@
                     dataType: "html",
                     success: function (result) {
                         //console.log(result);
-                        $('#find_job').html(result);
+                        $('#Find_Job').html(result);
                     },
                     error: function (result, status) {
                         console.log(result);
@@ -486,12 +488,12 @@
             //     function listjob() {
             //         $.ajax({
             //             type: "POST",
-            //             url: "http://localhost/lowker/student/find_job/list_job/",
+            //             url: "http://localhost/lowker/student/Find_Job/list_job/",
             //             // data: {'id_skill' : arr_skill},
             //             // dataType: "html",
             //             success: function (result) {
             //                 //console.log(result);
-            //                 $('#find_job').append(result);
+            //                 $('#Find_Job').append(result);
             //             },
             //             error: function (result, status) {
             //                 console.log(result);
@@ -502,12 +504,12 @@
             //     function listjob() {
             //         $.ajax({
             //             type: "POST",
-            //             url: "http://localhost/lowker/student/find_job/list_job/",
+            //             url: "http://localhost/lowker/student/Find_Job/list_job/",
             //             data: {'id_skill' : arr_skill},
             //             dataType: "html",
             //             success: function (result) {
             //                 //console.log(result);
-            //                 $('#find_job').append(result);
+            //                 $('#Find_Job').append(result);
             //             },
             //             error: function (result, status) {
             //                 console.log(result);
@@ -521,12 +523,12 @@
                     (function(){
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/lowker/student/find_job/list_job/",
+                            url: "http://localhost/lowker/student/Find_Job/list_job/",
                             // data: {'id_skill' : arr_skill},
                             // dataType: "html",
                             success: function (result) {
                                 //console.log(result);
-                                $('#find_job').html(result);
+                                $('#Find_Job').html(result);
                                 console.log(result);
                             },
                             error: function (result, status) {
@@ -538,12 +540,12 @@
                     (function(){
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/lowker/student/find_job/list_job/",
+                            url: "http://localhost/lowker/student/Find_Job/list_job/",
                             data: {'id_skill' : arr_skill},
                             dataType: "html",
                             success: function (result) {
                                 //console.log(result);
-                                $('#find_job').html(result);
+                                $('#Find_Job').html(result);
                             },
                             error: function (result, status) {
                                 console.log(result);

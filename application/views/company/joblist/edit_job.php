@@ -20,7 +20,7 @@
                                     </h4>
                                 </div>
                                 <div class="col-auto">
-                                    <a href="<?= base_url('company/job_list') ?>" class="btn btn-sm btn-secondary btn-icon-split">
+                                    <a href="<?= base_url('company/Job_List') ?>" class="btn btn-sm btn-secondary btn-icon-split">
                                         <span class="icon">
                                             <i class="fa fa-arrow-left"></i>
                                         </span>
@@ -33,7 +33,7 @@
                         </div>
                         <div class="card-body pb-2">
                             <?= $this->session->flashdata('pesan'); ?>
-                            <form action="<?php echo base_url('company/job_list/edit/'.$job[0]->id_pekerjaan) ?>" class="form" method="post">
+                            <form action="<?php echo base_url('company/Job_List/edit/'.$job[0]->id_pekerjaan) ?>" class="form" method="post">
                                 <input value=<?php echo(json_encode($job[0]->id_perusahaan)); ?> type="hidden" name="id" >
                                 <div class="row form-group">
                                     <label class="col-md-4 text-md-right" for="nama_pekerjaan">Job Name</label>

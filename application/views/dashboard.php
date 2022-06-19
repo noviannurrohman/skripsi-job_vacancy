@@ -9,6 +9,7 @@
                     <div class="col-xl-6 col-lg-9 col-md-10">
                         <div class="hero__caption">
                             <h1>Find the most exciting startup jobs</h1>
+                            
                         </div>
                     </div>
                 </div>
@@ -31,7 +32,7 @@
                                 </div>
                             </div>
                             <div class="search-form">
-                                <a href="<?= base_url('student/find_job'); ?>">Find job</a>
+                                <a href="<?= base_url('student/Find_Job'); ?>">Find job</a>
                             </div>	
                         </form>	 -->
                     </div>
@@ -60,7 +61,7 @@
                         <span class="flaticon-tour"></span>
                     </div>
                     <div class="services-cap">
-                       <h5><a href="<?= base_url('student/find_job'); ?>">Design & Creative</a></h5>
+                       <h5><a href="<?= base_url('student/Find_Job'); ?>">Design & Creative</a></h5>
                         <span>(653)</span>
                     </div>
                 </div>
@@ -71,7 +72,7 @@
                         <span class="flaticon-cms"></span>
                     </div>
                     <div class="services-cap">
-                       <h5><a href="<?= base_url('student/find_job'); ?>">Design & Development</a></h5>
+                       <h5><a href="<?= base_url('student/Find_Job'); ?>">Design & Development</a></h5>
                         <span>(658)</span>
                     </div>
                 </div>
@@ -82,7 +83,7 @@
                         <span class="flaticon-report"></span>
                     </div>
                     <div class="services-cap">
-                       <h5><a href="<?= base_url('student/find_job'); ?>">Sales & Marketing</a></h5>
+                       <h5><a href="<?= base_url('student/Find_Job'); ?>">Sales & Marketing</a></h5>
                         <span>(658)</span>
                     </div>
                 </div>
@@ -171,9 +172,9 @@
 </div>
 <!-- Online CV Area End-->
 <!-- Featured_job_start -->
-<section class="featured-job-area feature-padding">
+<!-- <section class="featured-job-area feature-padding">
     <div class="container">
-        <!-- Section Tittle -->
+        
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-tittle text-center">
@@ -184,7 +185,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-xl-10">
-                <!-- single-job-content -->
+                
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
@@ -204,7 +205,7 @@
                         <span>7 hours ago</span>
                     </div>
                 </div>
-                <!-- single-job-content -->
+                
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
@@ -224,7 +225,7 @@
                         <span>7 hours ago</span>
                     </div>
                 </div>
-                 <!-- single-job-content -->
+                
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
@@ -244,7 +245,7 @@
                         <span>7 hours ago</span>
                     </div>
                 </div>
-                 <!-- single-job-content -->
+                
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
@@ -267,7 +268,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- Featured_job_end -->
 <!-- How  Apply Process Start-->
 <div class="apply-process-area apply-bg pt-150 pb-150" data-background="assets/img/gallery/how-applybg.png">

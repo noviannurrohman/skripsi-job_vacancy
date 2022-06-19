@@ -113,7 +113,7 @@ if ($data == "applicant") {
   echo "active";
 }
 ?>">
-    <a class="nav-link" href="<?= base_url('company/applicant_list/index'); ?>">
+    <a class="nav-link" href="<?= base_url('company/Applicant_List/index'); ?>">
         <i class="icon-sb fas fa-regular fa-building"></i>
         <span>List of Applicants</span></a>
 </li>
@@ -124,7 +124,7 @@ if ($data == "joblist") {
   echo "active";
 }
 ?>">
-    <a class="nav-link" href="<?= base_url('company/job_list/index'); ?>">
+    <a class="nav-link" href="<?= base_url('company/Job_List/index'); ?>">
     <i class="icon-sb fas fa-regular fa-graduation-cap"></i>
         <span>Job List</span></a>
 </li>
@@ -135,7 +135,7 @@ if ($data == "studentlist") {
   echo "active";
 }
 ?>">
-    <a class="nav-link" href="<?= base_url('company/student_list/index'); ?>">
+    <a class="nav-link" href="<?= base_url('company/Student_List/index'); ?>">
         <i class="icon-sb fas fa-regular fa-building"></i>
         <span>Student List</span></a>
 </li>

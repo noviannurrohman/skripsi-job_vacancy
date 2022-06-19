@@ -75,7 +75,7 @@
                                         <!-- <td><?= $user['no_telp']; ?></td> -->
                                         <!-- <td><?= $user['role']; ?></td> -->
                                         <td>
-                                            <a href="<?= base_url('company/student_list/detail_student/') . $user['id'] ?>" class="btn btn-circle btn-sm btn-detail">
+                                            <a href="<?= base_url('company/Student_List/detail_student/') . $user['id'] ?>" class="btn btn-circle btn-sm btn-detail">
                                                 <i class="fa fa-info"></i>
                                             </a>
                                             <!-- <a href="<?= base_url('admin/student/toggle/') . $user['id'] ?>" class="btn btn-circle btn-sm <?= $user['is_active'] ? 'btn-secondary' : 'btn-success' ?>" title="<?= $user['is_active'] ? 'Disable User' : 'Activate User' ?>">

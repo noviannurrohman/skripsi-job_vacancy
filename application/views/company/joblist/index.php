@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-auto">
                             <a href="#" class="btn btn-sm btn-primary btn-icon-split" data-toggle="modal" data-target="#addModal">
-                             <!-- <a href="<?= base_url('company/job_list/add_job') ?>" class="btn btn-sm btn-primary btn-icon-split">  -->
+                             <!-- <a href="<?= base_url('company/Job_List/add_job') ?>" class="btn btn-sm btn-primary btn-icon-split">  -->
                                  <span class="icon">
                                     <i class="fa fa-user-plus"></i>
                                 </span>
@@ -77,16 +77,16 @@
                                         <td><?= $data['application_date']; ?></td>
                                         <!-- <td><?= $user['role']; ?></td> -->
                                         <td>
-                                            <a href="<?= base_url('company/job_list/detail_job/') . $data['id'] ?>" class="btn btn-circle btn-sm btn-detail">
+                                            <a href="<?= base_url('company/Job_List/detail_job/') . $data['id'] ?>" class="btn btn-circle btn-sm btn-detail">
                                                 <i class="fa fa-info"></i>
                                             </a>
                                             <!-- <a href="<?= base_url('admin/company/toggle/') . $data['id'] ?>" class="btn btn-circle btn-sm <?= $data['is_active'] ? 'btn-secondary' : 'btn-success' ?>" title="<?= $job['is_active'] ? 'Disable User' : 'Activate User' ?>">
                                                 <i class="fa fa-fw fa-power-off"></i>
                                             </a> -->
-                                            <a href="<?= base_url('company/job_list/edit_job/') . $data['id'] ?>" class="btn btn-circle btn-sm btn-warning">
+                                            <a href="<?= base_url('company/Job_List/edit_job/') . $data['id'] ?>" class="btn btn-circle btn-sm btn-warning">
                                                 <i class="fa fa-fw fa-edit"></i>
                                             </a>
-                                            <a onclick="return confirm('Yakin ingin menghapus data?')" href="<?= base_url('company/job_list/delete/') . $data['id'] ?>" class="btn btn-circle btn-sm btn-danger">
+                                            <a onclick="return confirm('Yakin ingin menghapus data?')" href="<?= base_url('company/Job_List/delete/') . $data['id'] ?>" class="btn btn-circle btn-sm btn-danger">
                                                 <i class="fa fa-fw fa-trash"></i>
                                             </a>
                                         </td>
@@ -116,7 +116,7 @@
                     <div class="modal-body">
                         <div class="card-body">
                             <?= $this->session->flashdata('pesan'); ?>
-                            <form action="<?php echo base_url('company/job_list/add') ?>" class="form" method="post">
+                            <form action="<?php echo base_url('company/Job_List/add') ?>" class="form" method="post">
                                 <div class="row form-group">
                                     <label class="col-md-4 text-md-right" for="nama_pekerjaan">Job Name</label>
                                     <div class="col-md-6">

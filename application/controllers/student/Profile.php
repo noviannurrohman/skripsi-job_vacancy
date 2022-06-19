@@ -213,7 +213,7 @@ class Profile extends CI_Controller {
 
                 $images[] = $fileName;
 
-                $config['file_name'] = $fileName;
+                $config['file_name'] = time().rand(10,99);
 
                 $this->upload->initialize($config);
 

@@ -32,7 +32,7 @@
                                 </div>
                             </div> -->
                             <!-- <div class="search-form">
-                                <a href="<?= base_url('student/find_job'); ?>">Find job</a>
+                                <a href="<?= base_url('student/Find_Job'); ?>">Find job</a>
                             </div>	 -->
                         <!-- </form>	 -->
                     </div>
@@ -61,7 +61,7 @@
                         <span class="flaticon-tour"></span>
                     </div>
                     <div class="services-cap">
-                       <h5><a href="<?= base_url('student/find_job'); ?>">Design & Creative</a></h5>
+                       <h5><a href="<?= base_url('student/Find_Job'); ?>">Design & Creative</a></h5>
                         <span>(653)</span>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                         <span class="flaticon-cms"></span>
                     </div>
                     <div class="services-cap">
-                       <h5><a href="<?= base_url('student/find_job'); ?>">Design & Development</a></h5>
+                       <h5><a href="<?= base_url('student/Find_Job'); ?>">Design & Development</a></h5>
                         <span>(658)</span>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                         <span class="flaticon-report"></span>
                     </div>
                     <div class="services-cap">
-                       <h5><a href="<?= base_url('student/find_job'); ?>">Sales & Marketing</a></h5>
+                       <h5><a href="<?= base_url('student/Find_Job'); ?>">Sales & Marketing</a></h5>
                         <span>(658)</span>
                     </div>
                 </div>

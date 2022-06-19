@@ -17,7 +17,7 @@
 							<form method="POST" class="my-login-validation" novalidate="" action="<?= base_url('student/login/aksi_login'); ?>">
 
 								<div class="form-group">
-									<label for="nim">Username</label>
+									<label for="nim">NIM</label>
 									<input id="nim" type="text" class="form-control" name="nim" value="" required autofocus>
 									<div class="invalid-feedback">
 										Email is invalid

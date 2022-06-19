@@ -330,7 +330,7 @@
                 $('#std_apply').attr('disabled','disabled');
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost/lowker/student/find_job/melamar/",
+                    url: "http://localhost/lowker/student/Find_Job/melamar/",
                     data: {'id_pekerjaan' : <?php echo $findjobs[0]['id'] ?>,
                     'id_perusahaan' : <?php echo $findjobs[0]['id_perusahaan'] ?>,
                     'id_mahasiswa' : <?php echo $this->session->userdata('id') ?>}, 
