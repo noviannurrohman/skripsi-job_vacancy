@@ -32,7 +32,7 @@ class Profile extends CI_Controller {
         $data['skill'] = $this->Student->joinSkill(['mahasiswa.nim' => $username])->result_array();
         $this->load->view('layout/header', $data);
         $this->load->view('student/profile', $data);
-        //$this->load->view('layout/footer');
+        $this->load->view('layout/footer');
     }
 
     public function setting()
@@ -165,6 +165,7 @@ class Profile extends CI_Controller {
             
         // }
     }
+
     public function upload_cv($resource)
     {
         $this->load->library('upload');
@@ -188,6 +189,7 @@ class Profile extends CI_Controller {
             ];
         }
     }
+    
     public function upload_sertif($resource)
     {
         $this->load->library('upload');

@@ -97,13 +97,13 @@
                                         <td>
                                             <?php /*ucwords($data->status_daftar); */
                                                 if ($data->status_daftar == '1') {
-                                                    echo "Lolos Seleksi";
+                                                    echo "pass the file selection";
                                                 }elseif ($data->status_daftar == '2') {
-                                                    echo "Lolos Tes";
+                                                    echo "pass the test";
                                                 }elseif ($data->status_daftar == '3') {
-                                                    echo "Lolos Interview";
+                                                    echo "pass the interview";
                                                 }elseif ($data->status_daftar == '4') {
-                                                    echo "Tidak Lolos";
+                                                    echo "did not pass";
                                                 }else{
                                                     echo "";
                                                 }
@@ -119,14 +119,14 @@
                                             </a> -->
                                             <div class="dropdown mb-4">
                                                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Pilih Lolos
+                                                Applicant Selection
                                                 </button>
                                                 <?php
                                                     echo '<div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
-                                                        <a class="dropdown-item" href="' .base_url('company/Applicant_List/applicant_seleksi/') . $data->id_pelamar. '">Tahap 1 - Seleksi Berkas</a>
-                                                        <a class="dropdown-item" href="' .base_url('company/Applicant_List/applicant_tes/') . $data->id_pelamar. '">Tahap 2 - Tes</a>
-                                                        <a class="dropdown-item" href="' .base_url('company/Applicant_List/applicant_interview/') . $data->id_pelamar. '">Tahap 3 - Interview</a>
-                                                        <a class="dropdown-item" href="' .base_url('company/Applicant_List/applicant_tidak_lolos/') . $data->id_pelamar. '">Tidak Lolos</a>
+                                                        <a class="dropdown-item" href="' .base_url('company/Applicant_List/applicant_seleksi/') . $data->id_pelamar. '">Stage 1 - File Selection</a>
+                                                        <a class="dropdown-item" href="' .base_url('company/Applicant_List/applicant_tes/') . $data->id_pelamar. '">Stage 2 - Test</a>
+                                                        <a class="dropdown-item" href="' .base_url('company/Applicant_List/applicant_interview/') . $data->id_pelamar. '">Stage 3 - Interview</a>
+                                                        <a class="dropdown-item" href="' .base_url('company/Applicant_List/applicant_tidak_lolos/') . $data->id_pelamar. '">did not pass</a>
                                                     </div>';
                                                 ?>
                                                 

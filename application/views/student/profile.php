@@ -97,3 +97,6 @@
                     <a href="<?= base_url('student/profile/setting'); ?>" class="btn btn-sm btn-block btn-primary"><i class="fa fa-edit"></i> Edit Profile</a>
                 </div>
             </div>
+        </div>
+    </div>
+</div>

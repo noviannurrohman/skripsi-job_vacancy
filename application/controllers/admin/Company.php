@@ -90,23 +90,24 @@ class Company extends CI_Controller {
     public function delete($id)
     {
         if ($this->Base->delete('perusahaan', ['id' => $id])) {
-            set_pesan('data deleted successfully.');
+            set_pesan('data failed to delete.', 'admin/company');
         } else {
-            set_pesan('data failed to delete.', false);
+            set_pesan('data deleted successfully.','admin/company');
         }
-        redirect('admin/company');
+        // redirect('admin/company');
     }
 
     public function toggle($id)
     {
         $status = $this->Base->getCompany('perusahaan', ['id' => $id])['is_active'];
         $toggle = $status ? 0 : 1; //Jika user aktif maka nonaktifkan, begitu pula sebaliknya
-        $pesan = $toggle ? 'user diaktifkan.' : 'user dinonaktifkan.';
+        $pesan = $toggle ? 'user has been activated.' : 'user has been disabled.';
 
         if ($this->Base->edit('perusahaan', ['is_active' => $toggle], ['id' => $id])) {
-            set_pesan($pesan);
+            set_pesan($pesan, 'admin/company');
         }
-        redirect('admin/company');
+        set_pesan($pesan, 'admin/company');
+        //redirect('admin/company');
     }
 
     public function detail_company($id)

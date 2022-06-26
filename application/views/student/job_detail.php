@@ -139,7 +139,7 @@
                              <div class="footer-tittle">
                                  <h4>About Us</h4>
                                  <div class="footer-pera">
-                                     <p>Heaven frucvitful doesn't cover lesser dvsays appear creeping seasons so behold.</p>
+                                     <p>E - Job Vacancy is a information system that makes it easier for polynema students to find jobs according to their skills.</p>
                                 </div>
                              </div>
                          </div>
@@ -152,11 +152,10 @@
                                 <h4>Contact Info</h4>
                                 <ul>
                                     <li>
-                                    <p>Address :Your address goes
-                                        here, your demo address.</p>
+                                    <p>Address : Jl. Soekarno Hatta No.9, Jatimulyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141.</p>
                                     </li>
-                                    <li><a href="#">Phone : +8880 44338899</a></li>
-                                    <li><a href="#">Email : info@colorlib.com</a></li>
+                                    <li><a href="#">Phone : (0341) 404424</a></li>
+                                    <li><a href="#">Email : cs@polinema.ac.id</a></li>
                                 </ul>
                             </div>
 
@@ -167,23 +166,23 @@
                             <div class="footer-tittle">
                                 <h4>Important Link</h4>
                                 <ul>
-                                    <li><a href="#"> View Project</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                    <li><a href="#">Testimonial</a></li>
+                                    <!-- <li><a href="#"> View Project</a></li> -->
+                                    <li><a href="<?= base_url('contact'); ?>">Contact Us</a></li>
+                                    <!-- <li><a href="#">Testimonial</a></li>
                                     <li><a href="#">Proparties</a></li>
-                                    <li><a href="#">Support</a></li>
+                                    <li><a href="#">Support</a></li> -->
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                    <!-- <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
                                 <h4>Newsletter</h4>
                                 <div class="footer-pera footer-pera2">
                                  <p>Heaven fruitful doesn't over lesser in days. Appear creeping.</p>
                              </div>
-                             <!-- Form -->
+                             
                              <div class="footer-form" >
                                  <div id="mc_embed_signup">
                                      <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
@@ -201,21 +200,21 @@
                              </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                <!--  -->
-               <div class="row footer-wejed justify-content-between">
+               <!-- <div class="row footer-wejed justify-content-between">
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <!-- logo -->
+                        
                         <div class="footer-logo mb-20">
                         <a href="<?= base_url('dashboard'); ?>"><img src="<?= base_url('assets/'); ?>img/logo/logojob.png" style="width: 199px;" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5 custom-titlefooter">
-                    <div class="footer-tittle-bottom">
-                        <span>5000+</span>
-                        <p>Talented Hunter</p>
-                    </div>
+                        <div class="footer-tittle-bottom">
+                            <span>5000+</span>
+                            <p>Talented Hunter</p>
+                        </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5 custom-titlefooter">
                         <div class="footer-tittle-bottom">
@@ -224,13 +223,13 @@
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5 custom-titlefooter">
-                        <!-- Footer Bottom Tittle -->
+                      
                         <div class="footer-tittle-bottom">
                             <span>568</span>
                             <p>Talented Hunter</p>
                         </div>
                     </div>
-               </div>
+               </div> -->
             </div>
         </div>
         <!-- footer-bottom area -->
@@ -337,15 +336,17 @@
                     dataType: "html",
                     success: function (result) {
                         console.log(result);
+                        alert("Successfully Apply. Please Wait for the Company to Contact You")
                     },
                     error: function (result, status) {
                         console.log(result);
+                        alert("Failed to Apply")
                     }
                 });
             }
             $(document).ready(function () {
                 if ("<?php echo $this->session->userdata('id_skill') ?>" == '0') {
-                    $("#std-apply").append( '<button id="std_apply" onclick="stdalert()" class="btn" disabled>Lengkapi Data Diri Anda</button>' );
+                    $("#std-apply").append( '<button id="std_apply" onclick="stdalert()" class="btn" disabled>Complete Your Personal Data</button>' );
                 } else {
                     if ("<?php echo $jml_pelamar; ?>" == null || "<?php echo $jml_pelamar; ?>" == 0 || "<?php echo $jml_pelamar; ?>" == "") {
                         $("#std-apply").append( '<button id="std_apply" onclick="stdalert()" class="btn">Apply Now</button>' )
@@ -354,13 +355,13 @@
                             $("#std-apply").append( '<button id="std_apply" onclick="stdalert()" class="btn">Apply Now</button>' );
                         }else{
                             if ("<?php echo($pelamar['status_daftar']); ?>" == "1") {
-                                $("#std-apply").append( '<button id="std_apply" onclick="#" class="btn lolos" disabled>Lolos Seleksi</button>' );
+                                $("#std-apply").append( '<button id="std_apply" onclick="#" class="btn lolos" disabled>Pass the File Selection</button>' );
                             } else if ("<?php echo($pelamar['status_daftar']); ?>" == "2") {
-                                $("#std-apply").append( '<button id="std_apply" onclick="#" class="btn lolos" disabled>Lolos Tes</button>' );
+                                $("#std-apply").append( '<button id="std_apply" onclick="#" class="btn lolos" disabled>Pass the Test</button>' );
                             } else if ("<?php echo($pelamar['status_daftar']); ?>" == "3") {
-                                $("#std-apply").append( '<button id="std_apply" onclick="#" class="btn lolos" disabled>Lolos Interview</button>' );
+                                $("#std-apply").append( '<button id="std_apply" onclick="#" class="btn lolos" disabled>Pass the Interview</button>' );
                             } else if("<?php echo($pelamar['status_daftar']); ?>" == "4") {
-                                $("#std-apply").append( '<button id="std_apply" onclick="stdalert()" class="btn gagal" disabled>Tidak Lolos</button>' );
+                                $("#std-apply").append( '<button id="std_apply" onclick="stdalert()" class="btn gagal" disabled>Did Not Pass</button>' );
                             } else {
                                 $("#std-apply").append( '<button id="std_apply" onclick="stdalert()" class="btn" disabled>Applied</button>' );
                             }

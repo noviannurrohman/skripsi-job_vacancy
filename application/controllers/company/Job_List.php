@@ -127,11 +127,11 @@ class Job_List extends CI_Controller {
     public function delete($id)
     {
         if ($this->Company->delete('pekerjaan', ['id' => $id])) {
-            set_pesan('data deleted successfully.');
+            set_pesan('data failed to delete.', 'company/job_list');
         } else {
-            set_pesan('data failed to delete.', false);
+            set_pesan('data deleted successfully.','company/job_list');
         }
-        redirect('company/job_list');
+        // redirect('company/job_list');
     }
 
     public function edit($id){

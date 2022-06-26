@@ -35,10 +35,10 @@ class Job extends CI_Controller {
     public function delete($id)
     {
         if ($this->Base->delete('pekerjaan', ['id' => $id])) {
-            set_pesan('data deleted successfully.');
+            set_pesan('data failed to delete.', 'admin/job');
         } else {
-            set_pesan('data failed to delete.', false);
+            set_pesan('data deleted successfully.','admin/job');
         }
-        redirect('admin/job/');
+        // redirect('admin/job');
     }
 }

@@ -118,23 +118,24 @@ class Student extends CI_Controller {
     public function delete($id)
     {
         if ($this->Base->delete('mahasiswa', ['id' => $id])) {
-            set_pesan('data deleted successfully.');
+            set_pesan('data failed to delete.', 'admin/student');
         } else {
-            set_pesan('data failed to delete.', false);
+            set_pesan('data deleted successfully.','admin/student');
         }
-        redirect('admin/student');
+        // redirect('admin/student');
     }
 
     public function toggle($id)
     {
         $status = $this->Base->getStudent('mahasiswa', ['id' => $id])['is_active'];
         $toggle = $status ? 0 : 1; //Jika user aktif maka nonaktifkan, begitu pula sebaliknya
-        $pesan = $toggle ? 'user activated.' : 'user disabled.';
+        $pesan = $toggle ? 'user has been activated.' : 'user has been disabled.';
 
         if ($this->Base->edit('mahasiswa', ['is_active' => $toggle], ['id' => $id])) {
-            set_pesan($pesan);
+            set_pesan($pesan, 'admin/student');
         }
-        redirect('admin/student');
+        set_pesan($pesan, 'admin/student');
+        // redirect('admin/student');
     }
 
     // public function DDetail_skill($id)

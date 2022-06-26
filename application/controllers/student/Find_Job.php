@@ -91,7 +91,7 @@ class Find_Job extends CI_Controller {
         $data['findjobs'] = $this->Student->getPekerjaan('pekerjaan', 'id ='. $id);
         $data['findjob'] = $this->Student->joinJob($where)->result_array();
         $data['jml_pelamar'] = $this->Student->getPelamar('pelamar', $wherepl)->num_rows();
-        $pelamar_null = ["status_daftar" => "tidak lolos"];
+        $pelamar_null = ["status_daftar" => "did not pass"];
         $data['pelamar'] = ($data['jml_pelamar'] == 0) ? $pelamar_null : $this->Student->getPelamar('pelamar', $wherepl)->result_array()[0];
         $this->load->view('layout/header');
         $this->load->view('student/job_detail', $data, $wherepl);
