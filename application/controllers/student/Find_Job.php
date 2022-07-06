@@ -27,10 +27,28 @@ class Find_Job extends CI_Controller {
         //$this->load->view('layout/footer');
     }
 
+    public function manipulasiTanggal($tgl, $jumlah=1, $format='days')
+    {
+        $currentDate = new DateTime($tgl);
+        $currentDate -> modify($jumlah.' '.$format);
+        return $currentDate -> format('Y-m-d');
+    }
+
     public function list_job()
     {
         //$where = '2';
-        $where = $this->input->post('id_skill');
+        $tgl=date('Y-m-d');
+        $currentDate = new DateTime($tgl);
+        $currentDate -> modify('6 Month');
+        $tgl_6_bulan = $currentDate -> format('Y-m-d');
+        //$where = "id_skill=".$this->input->post('id_skill')."BETWEEN".$tgl." AND ".$tgl_6_bulan;
+        if ($this->input->post('id_skill') == null || $this->input->post('id_skill') == 0) {
+            $where = 'pekerjaan.application_date BETWEEN "'.$tgl.'" AND "'.$tgl_6_bulan.'"';
+        }else {
+            $where = 'pekerjaan.id_skill = '.$this->input->post('id_skill')." && ".'pekerjaan.application_date = '."BETWEEN ".$tgl." AND ".$tgl_6_bulan;
+        }
+        //$where = $this->input->post('id_skill');
+        //print_r($where);
         $data['findjob'] = $this->Student->getListJob($where);
         //echo json_encode($data);
         echo $data['findjob'];
@@ -91,8 +109,8 @@ class Find_Job extends CI_Controller {
         $data['findjobs'] = $this->Student->getPekerjaan('pekerjaan', 'id ='. $id);
         $data['findjob'] = $this->Student->joinJob($where)->result_array();
         $data['jml_pelamar'] = $this->Student->getPelamar('pelamar', $wherepl)->num_rows();
-        $pelamar_null = ["status_daftar" => "did not pass"];
-        $data['pelamar'] = ($data['jml_pelamar'] == 0) ? $pelamar_null : $this->Student->getPelamar('pelamar', $wherepl)->result_array()[0];
+        $pelamar_null = ["status_daftar" => "did not pass"];//pelamar yang melamar pada pekerjaan ini
+        $data['pelamar'] = ($data['jml_pelamar'] == 0) ? $pelamar_null :$this->Student->getPelamar('pelamar', $wherepl)->result_array()[0];
         $this->load->view('layout/header');
         $this->load->view('student/job_detail', $data, $wherepl);
         //echo json_encode($data['pelamar']);

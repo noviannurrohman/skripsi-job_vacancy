@@ -135,12 +135,16 @@ class M_Student extends CI_Model{
 
     public function getListJob($where = null)
     {
+        $tgl=date('Y-m-d');
+        $currentDate = new DateTime($tgl);
+        $currentDate -> modify('6 Month');
+        $tgl_6_bulan = $currentDate -> format('Y-m-d');
         if ($where != null) {
             $this->db->select('pekerjaan.id , pekerjaan.nama_pekerjaan, pekerjaan.jenis_pekerjaan, pekerjaan.application_date, pekerjaan.posted_date, pekerjaan.lokasi, pekerjaan.deskripsi_pekerjaan, pekerjaan.id_skill, perusahaan.nama_instansi, perusahaan.foto, perusahaan.website, perusahaan.deskripsi, perusahaan.email');
             $this->db->from('pekerjaan');
             $this->db->join('perusahaan', 'pekerjaan.id_perusahaan = perusahaan.id');
-            $this->db->where($where);
-            $this->db->order_by('pekerjaan.id');
+            $this->db->where($where." && ".'pekerjaan.application_date BETWEEN "'.$tgl.'" AND "'.$tgl_6_bulan.'"');
+            $this->db->order_by('pekerjaan.id', 'desc');
             $query = $this->db->get();
             $list_job = null;
             foreach ($query->result() as $data) :
@@ -163,7 +167,7 @@ class M_Student extends CI_Model{
                     </div>
                     <div class="items-link items-link2 f-right">
                         <a href="' .base_url("student/find_job/detail_job/".$data->id). '">' .$data->jenis_pekerjaan. '</a>
-                        <span>' .$data->posted_date. '</span>
+                        <span>' .$data->application_date. '</span>
                     </div>
                 </div>';
             endforeach;
@@ -173,6 +177,7 @@ class M_Student extends CI_Model{
             $this->db->from('pekerjaan');
             $this->db->join('perusahaan', 'pekerjaan.id_perusahaan = perusahaan.id');
             $this->db->order_by('pekerjaan.id', 'desc');
+            $this->db->where('pekerjaan.application_date BETWEEN "'.$tgl.'" AND "'.$tgl_6_bulan.'"');
             // $this->db->where($where);
             $query = $this->db->get();
             $list_job = null;

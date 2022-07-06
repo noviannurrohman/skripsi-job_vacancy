@@ -2,7 +2,6 @@
 <?php echo "<script>console.log('" . json_encode($skill) . "');</script>"; ?>
 <?php echo "<script>console.log('" . $this->session->userdata('nim') . "');</script>"; ?>
 
-
     <main>
         <!-- Hero Area Start-->
         <div class="slider-area ">
@@ -403,6 +402,7 @@
             function filter() {
                 console.log('poso poso')
             }
+            
             // document.getElementById("filter").addEventListener("click", function() {
             //     console.log('ss')
             // });

@@ -387,7 +387,7 @@
                 </div>
             </div>
             <div class="row form-group">
-                <label class="col-md-3 text-md-right" for="sertifikat">CV <br> *harus pdf</label>
+                <label class="col-md-3 text-md-right" for="sertifikat">CV <br> *pdf</label>
                 <div class="col-md-1">
                     <div class="row">
                         <!-- <div class="col-3">
@@ -406,7 +406,7 @@
 
             <!-- INI MULTIPLE  -->
             <div class="row form-group">
-                <label class="col-md-3 text-md-right" for="sertifikat">Certificate <br> *harus pdf</label>
+                <label class="col-md-3 text-md-right" for="sertifikat">Certificate <br> *pdf</label>
                 <div class="col-md-1">
                     <div class="row">
                         <?php if ($mahasiswa['sertifikat'] != "") {
